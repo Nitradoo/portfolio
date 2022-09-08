@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-window animated animatedFadeInUp fadeInUp" id="window">
+        <div class="terminal-header">
+          <a class="terminal-button red"></a>
+          <a class="terminal-button yellow" onclick="yellowButton()"></a>
+          <a class="terminal-button green" onclick="greenButton()"></a>
+        </div>
+      <div class="terminal" id="Terminal">
+        <div>Welcome! Type <b>help</b> for a list of supported commands.</div>
+      </div>
+      </div>
+</body>
+</html>

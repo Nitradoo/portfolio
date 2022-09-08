@@ -1,0 +1,196 @@
+body {
+    background: rgb(189, 147, 249);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.terminal-window {
+    text-align: left;
+    width: 600px;
+    height: 360px;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    box-shadow: 0 0 5px 1px rgb(40, 42, 54);
+    margin: 0 auto;
+    background-color: darkslategray;
+}
+
+.terminal-header {
+    background: #e0e8f0;
+    height: 30px;
+    border-radius: 8px 8px 0 0;
+    padding-left: 10px;
+    font-family: "Monaco", Consolas, Lucida Console, monospace;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    margin: 10px 4px 0 0;
+    display: inline-block;
+    border-radius: 50%;
+}
+.terminal-header-text {
+    position: absolute;
+    color: var(--terminal-font-color);
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    
+}
+
+.green {
+    background: #3bb662;
+}
+
+.yellow {
+    background: #e5c30f;
+}
+
+.red {
+    background: #e75448;
+}
+
+.terminal-body {
+    color: white;
+    font-family: Menlo, Monaco, "Consolas", monospace, "Courier New", "Courier";
+    font-size: 11pt;
+    background: #30353a;
+    opacity: 0.9;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    bottom: 0;
+}
+
+/*terminal*/
+.terminal {
+    font-family: 'Ubuntu Mono', monospace;
+    color: #EEE3CB;
+    font-size: 16px;
+    font-weight: 100;
+    overflow-y: scroll;
+    overflow: auto;
+    max-height: 328px;
+    margin-left: 5px;
+}
+
+.terminal-input {
+    background: rgba(0, 0, 0, 0);
+    font-family: monospace;
+    color: transparent;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    -webkit-text-fill-color: #EEE3CB;
+}
+
+.terminal-purple {
+    color: #5050f2;
+}
+
+.console-line {
+    color: rgb(155, 90, 247);
+}
+
+.login-line {
+    color: #fff;
+}
+
+.console-carrot {
+    vertical-align: middle;
+    background: rgb(168, 112, 247);
+    height: 15px;
+    width: 8px;
+    margin-left: -7px;
+    display: inline-block;
+    animation: blink 1s step-start 0s infinite;
+}
+
+::selection {
+    background-color: #fff;
+    color: #000;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.0;
+    }
+}
+
+
+
+
+/*scrollbar*/
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+.terminal::-webkit-scrollbar {
+    background-color: #fff;
+    width: 12px;
+}
+
+/* background of the scrollbar except button or resizer */
+.terminal::-webkit-scrollbar-track {
+    background-color: #e0e8f0;
+}
+
+/* scrollbar itself */
+.terminal::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 12px;
+    border: 4px solid #e0e8f0;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.terminal::-webkit-scrollbar-button {
+    display:none;
+}
+/*scrollbar*/
+
+/*ANIMATION*/
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+  
+  @-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+  }
+  
+  .animatedFadeInUp {
+    opacity: 0
+  }
+  
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }
+  /*END ANIMATION*/
