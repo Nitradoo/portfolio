@@ -94,6 +94,11 @@ function greenButton(){
         var NewLine = CurrentCommand.replace("echo ", "");
         $("#Terminal").append(NewLine);
       }
+      //Google
+      else if (CurrentCommand.startsWith("google")) {
+        $("#Terminal").append('Redirecting to google');
+        setTimeout(() => window.location.href = "http://google.com", 1000)
+      }
       //hostname
       else if (CurrentCommand.startsWith("hostname")) {
         var name = CurrentCommand.replace("hostname ", "");
@@ -114,6 +119,7 @@ function greenButton(){
         $("#Terminal").append('These shell commands are defined internally.  Type "help" to see this list.<br/><br/>');
         $("#Terminal").append('A star (*) next to a name means that the command is disabled.<br/>');
         $("#Terminal").append('cd [dir] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change directory<br/>');
+        $("#Terminal").append('google &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to google<br/>');
         $("#Terminal").append('clear &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Clear console screen<br/>');
         $("#Terminal").append('echo [arg...] &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Echo text back in console<br/>');
         $("#Terminal").append('exit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logout of terminal<br/>');
