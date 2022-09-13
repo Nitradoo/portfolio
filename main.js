@@ -84,48 +84,19 @@ function greenButton(){
       if (CurrentCommand == 'clear') {
         $("#Terminal").empty();
       }
-      //Logout
-      else if (CurrentCommand == 'exit' || CurrentCommand == 'logout') {
-        $("#Terminal").empty();
-        username = ''
-      }
-      //Echo
-      else if (CurrentCommand.startsWith("echo")) {
-        var NewLine = CurrentCommand.replace("echo ", "");
-        $("#Terminal").append(NewLine);
-      }
       //Google
       else if (CurrentCommand.startsWith("google")) {
         $("#Terminal").append('Redirecting to google');
         setTimeout(() => window.location.href = "http://google.com", 1000)
       }
-      //hostname
-      else if (CurrentCommand.startsWith("hostname")) {
-        var name = CurrentCommand.replace("hostname ", "");
-        if (name !== '') {
-          hostname = name;
-        }
+      //dottopia
+      else if (CurrentCommand.startsWith("dottopia")) {
+        $("#Terminal").append('Redirecting to dottopia');
+        setTimeout(() => window.location.href = "https://dottopia.herokuapp.com/", 1000)
       }
-      //cd
-      else if (CurrentCommand.startsWith("cd")) {
-        var Address = CurrentCommand.replace("cd ", "").replace(" ", "").replace("//", "");
-        if (Address == '/' || Address == '' || Address == 'cd') {
-          folder = '~';
-        } else {
-          folder = Address;
-        }
-      } else if (CurrentCommand == 'help' || CurrentCommand == '?') {
-        $("#Terminal").append('GNU bash, version 4.3.30(1)-release (arm-unknown-linux-gnueabihf)<br/>');
-        $("#Terminal").append('These shell commands are defined internally.  Type "help" to see this list.<br/><br/>');
-        $("#Terminal").append('A star (*) next to a name means that the command is disabled.<br/>');
-        $("#Terminal").append('cd [dir] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change directory<br/>');
+      else if (CurrentCommand == 'projects') {
         $("#Terminal").append('google &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to google<br/>');
-        $("#Terminal").append('clear &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Clear console screen<br/>');
-        $("#Terminal").append('echo [arg...] &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Echo text back in console<br/>');
-        $("#Terminal").append('exit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logout of terminal<br/>');
-        $("#Terminal").append('help &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get Help about command<br/>');
-        $("#Terminal").append('hostname [arg..]&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change hostname<br/>');
-        $("#Terminal").append('logout &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logout of terminal<br/>');
+        $("#Terminal").append('dottopia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to dottopia<br/>');
       }
       //No command
       else if (CurrentCommand === '') {}
