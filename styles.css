@@ -39,6 +39,13 @@ body {
     font-weight: 500;
     
 }
+.parent {
+    position:relative;
+}
+
+.child {
+    position:absolute;
+}
 
 .green {
     background: #3bb662;
@@ -50,6 +57,18 @@ body {
 
 .red {
     background: #e75448;
+}
+
+.red:hover{
+    background-image: url(X4.svg);
+}
+
+.yellow:hover{
+    background-image: url(minimize.svg);
+}
+
+.green:hover{
+    background-image: url(maximize.svg)
 }
 
 .terminal-body {
@@ -194,3 +213,25 @@ Not supports in Firefox and IE */
     -webkit-animation-name: fadeInUp;
   }
   /*END ANIMATION*/
+
+/*window2*/
+.terminal-window2 {
+    text-align: left;
+    width: 1464px;
+    height: 720px;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    box-shadow: 0 0 5px 1px rgb(40, 42, 54);
+    margin: 0 auto;
+    background-color: darkslategray;
+}
+
+.frame{
+    width: 1460px;
+    height: 686px;
+    overflow: hidden;
+
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+}

@@ -10,15 +10,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="terminal-window animated animatedFadeInUp fadeInUp" id="window">
+    <div class="terminal-window animated animatedFadeInUp fadeInUp child" id="window">
         <div class="terminal-header">
-          <a class="terminal-button red"></a>
+          <a class="terminal-button red" onclick="closeWindow()"></a>
           <a class="terminal-button yellow" onclick="yellowButton()"></a>
           <a class="terminal-button green" onclick="greenButton()"></a>
         </div>
       <div class="terminal" id="Terminal">
         <div>Welcome! Type <b>projects</b> for a list of my projects.</div>
       </div>
+      </div>
+
+      <div class="terminal-window2 animated animatedFadeInUp fadeInUp child" id="window2" style="visibility:hidden;">
+        <div class="terminal-header">
+          <a class="terminal-button red" onclick="closeWindow2()"></a>
+          <a class="terminal-button yellow" onclick="yellowButton()"></a>
+          <a class="terminal-button green" onclick="greenButton()"></a>
+        </div>
+        <iframe class="frame" src="https://dottopia.herokuapp.com"></iframe>
       </div>
 </body>
 </html>

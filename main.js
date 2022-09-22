@@ -10,6 +10,13 @@ function greenButton(){
 
     document.getElementById("Terminal").style.maxHeight = "328px";
   }
+function closeWindow(){
+  document.getElementById('window').style.visibility = "hidden";
+}
+
+function closeWindow2(){
+  document.getElementById('window2').style.visibility = "hidden";
+}
   
   //Current line
   var CurrentId = undefined;
@@ -91,8 +98,8 @@ function greenButton(){
       }
       //dottopia
       else if (CurrentCommand.startsWith("dottopia")) {
-        $("#Terminal").append('Redirecting to dottopia');
-        setTimeout(() => window.location.href = "https://dottopia.herokuapp.com/", 1000)
+        $("#Terminal").append('Opening dottopia');
+        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 1000)
       }
       else if (CurrentCommand == 'projects') {
         $("#Terminal").append('google &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to google<br/>');
