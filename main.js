@@ -67,12 +67,6 @@ function closeWindow2(){
       $("#Terminal").append('<div class="console-line" id="' + CurrentId + '">' + username + '@' + hostname + ':<span class="terminal-purple">' + folder + ' $</span> <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="terminal-input" /><div class="console-carrot"></div></div>');
       $("Terminal").append('Type help to view a list of available commands<br/>');
     } else {
-      $("#Terminal").append('The programs included with the Debian GNU/Linux system are free software;<br/>');
-      $("#Terminal").append('the exact distribution terms for each program are described in the<br/>');
-      $("#Terminal").append('individual files in /usr/share/doc/*/copyright.<br/><br/>');
-      $("#Terminal").append('Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br/>');
-      $("#Terminal").append('permitted by applicable law.<br/><br/>');
-      $("#Terminal").append('<div id="' + CurrentId + '">Login as: <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="terminal-input" /><div class="console-carrot"></div></div>');
     }
     $('#' + CurrentId + ' input').focus();
     $('#' + CurrentId + ' input').attr("size", '1');
@@ -87,23 +81,28 @@ function closeWindow2(){
       username = CurrentCommand;
       return 500;
     } else {
-      //Clear
-      if (CurrentCommand == 'clear') {
-        $("#Terminal").empty();
-      }
-      //Google
-      else if (CurrentCommand.startsWith("google")) {
-        $("#Terminal").append('Redirecting to google');
-        setTimeout(() => window.location.href = "http://google.com", 1000)
+      //uploader
+      if (CurrentCommand.startsWith("uploader")) {
+        $("#Terminal").append('Opening the uploader');
+        document.getElementById('frame').src = 'https://nitros-uploader.herokuapp.com'
+        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 3000)
       }
       //dottopia
       else if (CurrentCommand.startsWith("dottopia")) {
         $("#Terminal").append('Opening dottopia');
+        document.getElementById('frame').src = 'https://nitros-uploader.herokuapp.com'
         setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 1000)
       }
+      //dottopia
+      else if (CurrentCommand.startsWith("twitter")) {
+        $("#Terminal").append('Opening twitter');
+        document.getElementById('frame').src = 'http://twtlaravelnitro.herokuapp.com/'
+        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 1000)
+      }  
       else if (CurrentCommand == 'projects') {
-        $("#Terminal").append('google &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to google<br/>');
         $("#Terminal").append('dottopia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to dottopia<br/>');
+        $("#Terminal").append('uploader &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to the uploader<br/>');
+        $("#Terminal").append('twitter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to my twitter project<br/>');
       }
       //No command
       else if (CurrentCommand === '') {}
