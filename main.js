@@ -90,7 +90,7 @@ function closeWindow2(){
       //dottopia
       else if (CurrentCommand.startsWith("dottopia")) {
         $("#Terminal").append('Opening dottopia');
-        document.getElementById('frame').src = 'https://nitros-uploader.herokuapp.com'
+        document.getElementById('frame').src = 'https://dottopia.herokuapp.com/'
         setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 3000)
       }
       //dottopia
