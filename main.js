@@ -96,7 +96,7 @@ function closeWindow2(){
       //dottopia
       else if (CurrentCommand.startsWith("twitter")) {
         $("#Terminal").append('Opening twitter');
-        document.getElementById('frame').src = 'http://twtlaravelnitro.herokuapp.com/'
+        document.getElementById('frame').src = 'https://twtlaravelnitro.herokuapp.com/'
         setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 3000)
       }  
       else if (CurrentCommand == 'projects') {
