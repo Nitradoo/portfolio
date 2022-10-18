@@ -91,13 +91,13 @@ function closeWindow2(){
       else if (CurrentCommand.startsWith("dottopia")) {
         $("#Terminal").append('Opening dottopia');
         document.getElementById('frame').src = 'https://nitros-uploader.herokuapp.com'
-        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 1000)
+        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 3000)
       }
       //dottopia
       else if (CurrentCommand.startsWith("twitter")) {
         $("#Terminal").append('Opening twitter');
         document.getElementById('frame').src = 'http://twtlaravelnitro.herokuapp.com/'
-        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 1000)
+        setTimeout(() => document.getElementById('window2').style.visibility = 'visible', 3000)
       }  
       else if (CurrentCommand == 'projects') {
         $("#Terminal").append('dottopia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Go to dottopia<br/>');
